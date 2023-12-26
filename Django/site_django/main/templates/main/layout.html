@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+</head>
+<body>
+    <aside>
+        <img src="{% static 'main/img/fit_logo.png' %}" alt="Logo">
+        <span class="logo">ФІТ</span>
+        <h3>Навігація</h3>
+        <ul>
+            <a href="{% url 'home' %}"><li>Головна</li></a>
+            <a href="{% url 'about' %}"><li>Про нас</li></a>
+            <a href="{% url 'news_home' %}"><li>Новини</li></a>
+            <a href=""><li>Контакти</li></a>
+            <a href="{% url 'create' %}"><li><button class="btn btn-info">Додати запис</li></a>
+        </ul>
+    </aside>
+    <main>
+        {% block content %}
+        {% endblock %} 
+    </main>
+</body>
+</html>
